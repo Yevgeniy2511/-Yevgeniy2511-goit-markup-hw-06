@@ -182,7 +182,6 @@ body {
      flex-direction: column;
      justify-content: center;
      align-items: center;
-     width: 264px;
      border-radius: 0px 0px 4px 4px;
      background-color: #FFFFFF;
      box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
@@ -751,8 +750,11 @@ color: #FFFFFF;
         .mobile-menu-link:focus {
             color: #404bbf;
         }
-    .mobile-address-header {
-        margin-bottom: 48px;
+    .mobile-address-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 48px;
     }
     .mobile-address-list {
     display: flex;
@@ -851,7 +853,7 @@ screen and (min-device-pixel-ratio: 2) {
     gap: 72px;
 }
 .benef-list-item {
-    width: 288px;
+    width: 100%;
 }
 .benef-item-head {
     text-align: center;
@@ -872,13 +874,13 @@ screen and (min-device-pixel-ratio: 2) {
 .overlay {
     display: none;
 }
-.portf-descr-container {
-    width: 288px;
-}
 .portf-list {
     display: flex;
     flex-direction: column;
     row-gap: 48px;
+}
+.portf-list-item {
+    width: 100%;
 }
 
 /*=========== Mobile-only Footer ===========*/
@@ -986,7 +988,8 @@ margin-left: 26px;
             padding-top: 24px;
             padding-bottom: 24px;
             transition:
-                color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+                color 250ms 
+                cubic-bezier(0.4, 0, 0.2, 1);
         }
          .studio-after {
              color: #404bbf;
@@ -1045,12 +1048,8 @@ margin-left: 26px;
 .portf-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 72px 24px;
 }
-.portf-list-item {
-    width: 356px;
-    height: 420px;
-}
+
 
 /*=========== Tablet Footer styles ===========*/
 
@@ -1128,12 +1127,11 @@ padding-bottom: 36px;
 .benef-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 24px;
+    gap: 72px 24px;
 }
 
 .benef-list-item {
-    width: 356px;
-    margin-bottom: 72px;
+    width: calc((100% - 24px) / 2);
 }
 
 /*======== Tablet-only Team sect-3 styles ========*/
@@ -1143,8 +1141,10 @@ padding-bottom: 36px;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
-    row-gap: 64px;
-    column-gap: 24px; 
+    gap: 64px 24px;
+}
+.team-list-item {
+    width: calc((100% - 208px) / 2);
 }
 
 /*========= Tablet-only Portfolio sect-4 styles =========*/
@@ -1152,13 +1152,13 @@ padding-bottom: 36px;
 .portf-list {
     gap: 72px 24px;
 }
-
+.portf-list-item {
+width: calc((100% - 24px) / 2);
+}
 .overlay {
     display: none;
 }
-.portf-descr-container {
-    width: 356px;
-}
+
 
 /*======= Tablet-only Footer styles =======*/
 
@@ -1259,7 +1259,7 @@ screen and (min-device-pixel-ratio: 2) {
 }
 
 .benef-list-item {
-    width: 264px;
+    width: calc((100% - 72px) / 4);
 }
 
 .benef-item-head {
@@ -1284,6 +1284,9 @@ screen and (min-device-pixel-ratio: 2) {
     flex-direction: row;
     justify-content: flex-start;
     gap: 24px;
+}
+.team-list-item {
+    width: calc((100% - 72px) / 4);
 }
 
 /*======== Descktop Portfolio sect-4 styles ========*/
